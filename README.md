@@ -61,12 +61,22 @@ class ExpressionB {
 }
 ```
 
-==> Regarde ce que tout ceci donne en première version ouvrir dans blueJ <racine>/ExpMath/src/main/java
+==> Regardez ce que tout ceci donne en première version: ouvrir dans blueJ <racine>/ExpMath/src/main/java
 
 # Quelques questions de réflexion:
 
-1. Que représente la méthode dans les classes du genre?
-
-> ```public static Type create(parametres)```
+1. Que représente la méthode dans les classes du genre? ```public static Type create(parametres) { ... }```
 
 2. D'après vous pourquoi le constructeur est private?
+3. A quoi sert de réécrire les méthodes equal() et hashcode() ?
+4. qui crée l'expression suivante `(((3 -5) + 6) +8)` puis lui appliquer les 3 méthodes eval(), evalnum() et show()
+5. Excrire les 2 classes qui manques Mult et Div
+
+===
+//TODO la prochaine fois 
+1. Appliquer le  pattern visiteurs pour simplifier les différente évaluation
+2. Appliquer un méthode inspiré de la descente récursive pour faire le parsing du langage Expression math et générer l'AST
+3. Réfléchir aux différentes améliorations possible
+
+
+

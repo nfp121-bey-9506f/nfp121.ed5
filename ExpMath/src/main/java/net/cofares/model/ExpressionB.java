@@ -15,16 +15,20 @@ public abstract class ExpressionB implements Expression{
     Expression e2;
 
     /**
-     * C'est une abstract facroty en focntion op choix de la factory
+     * C'est une abstract facroty en focntion de op ::== choix de 
+     * la Fabrique concrète
      * @param op
      * @param e1
      * @param e2
      * @return 
      */
-    public static Expression create(String op, Expression e1, Expression e2) {
+    public static ExpressionB create(String op, Expression e1, Expression e2) {
         if (op.equals("+")) {
             return Add.create(e1, e2);
+        } else if (op.equals("-")) {
+             return Sous.create(e1, e2);
         }
+        //TODO : ajouter toutes les autres oérations pérmises
         return null;
     }
 

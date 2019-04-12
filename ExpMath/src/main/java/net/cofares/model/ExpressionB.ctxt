@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=ExpressionB
+comment0.text=\r\n\ omolememte\ composition,\ Abstract\ Factory\ +\ template\r\n\ @author\ Acer\r\n
+comment1.params=op\ e1\ e2
+comment1.target=ExpressionB\ create(java.lang.String,\ Expression,\ Expression)
+comment1.text=\r\n\ C'est\ une\ abstract\ facroty\ en\ focntion\ de\ op\ \:\:\=\=\ choix\ de\ \r\n\ la\ Fabrique\ concr\u00E8te\r\n\ @param\ op\r\n\ @param\ e1\r\n\ @param\ e2\r\n\ @return\ \r\n
+numComments=2

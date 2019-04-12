@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Const
+comment0.text=\r\n\ Const\ \:\:\=\ entier\ de\ java\ \r\n\ Red\u00E9finition\ de\ equals()\ pour\ \u00E9galit\u00E9\ entre\ 2\ Const\r\n\ //TODO\ redefinir\ aussi\ hashcode()\r\n\ @author\ Pascal\ Fares\ (c)\ Cnam\ Liban\r\n
+comment1.params=i
+comment1.target=Const\ create(java.lang.Integer)
+comment2.params=i
+comment2.target=Const(java.lang.Integer)
+comment3.params=
+comment3.target=Expression\ eval()
+comment4.params=
+comment4.target=java.lang.String\ show()
+comment5.params=
+comment5.target=java.lang.Integer\ evalNum()
+comment6.params=args
+comment6.target=void\ main(java.lang.String[])
+comment7.params=o
+comment7.target=boolean\ equals(java.lang.Object)
+comment8.params=
+comment8.target=java.lang.Integer\ getI()
+comment8.text=\r\n\ @return\ the\ i\r\n
+numComments=9

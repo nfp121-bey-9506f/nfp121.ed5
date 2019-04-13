@@ -27,8 +27,10 @@ ou (à la place de 3, 4)
 6. **MULT**        ::= **EXPRESSION** * **EXPRESSION**
 7. **DIV**         ::= **EXPRESSION** / **EXPRESSION**
 
+#  La version V0.1, composition, pattern composite, factory method, Template method 
 
-## Voir la première version V0.1 
+
+## Pour voir la première version V0.1 
 
 1. Faire clone du projet
 2. Après le clone git checkout V0.1 (attention V0.1 n'est pas une branche mais un commit historique)
@@ -72,6 +74,10 @@ class ExpressionB {
 4. qui crée l'expression suivante `(((3 -5) + 6) +8)` puis lui appliquer les 3 méthodes eval(), evalnum() et show()
 5. Excrire les 2 classes qui manques Mult et Div
 
+## La version v0.2 : pattern visiteur pour evalNum seule
+
+## La version v0.3 : patterb visiteur + streatégie par injection de l'évaluateur
+ 
 ===
 //TODO la prochaine fois 
 1. Appliquer le  pattern visiteurs pour simplifier les différente évaluation

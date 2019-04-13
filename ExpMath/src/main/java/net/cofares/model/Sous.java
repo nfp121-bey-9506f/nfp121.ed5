@@ -25,7 +25,7 @@ public class Sous extends ExpressionB {
     }
     @Override
     public Integer evalNum() {
-        return e1.evalNum() - e2.evalNum();
+        return en.evalNum(this);
     }
 
     @Override

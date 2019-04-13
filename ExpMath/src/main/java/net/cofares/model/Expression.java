@@ -26,17 +26,30 @@ package net.cofares.model;
  * ...
  * @author Pascal Fares
  */
-public interface Expression {
+public abstract class Expression {
+    static EvalNum en = new EvalNum(); //Le visiteur Eval NUM TODO: faire que tous les visiteur evaluateur soit une startegie
+    // à injecter apr un setter, à la création une evaluateur par defaut.
+
+    //Factory Expression create : style visiteur
+    public static Expression create(Integer i) {
+        return Const.create(i);
+    }
+    public static Expression create(String op, Expression e1, Expression e2) {
+        return ExpressionB.create(op, e1, e2);
+    }
     /**
      * Avaluation numérique
+     * @return 
      */
-    public Integer evalNum();
+    abstract public Integer evalNum();
     /**
      * Avaluation de symplification Expression donne Une autre expression
+     * @return 
      */
-    public Expression eval();
+    abstract public Expression eval();
     /**
      * Evaluation affichage de l'arbre sémantique (ou traduction)
+     * @return 
      */
-    public String show();
+    abstract public String show();
 }

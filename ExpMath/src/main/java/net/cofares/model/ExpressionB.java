@@ -9,10 +9,11 @@ package net.cofares.model;
  * omolememte composition, Abstract Factory + template
  * @author Acer
  */
-public abstract class ExpressionB implements Expression{
+public abstract class ExpressionB extends Expression{
 
     Expression e1;
     Expression e2;
+
 
     /**
      * C'est une abstract facroty en focntion de op ::== choix de 
@@ -23,12 +24,13 @@ public abstract class ExpressionB implements Expression{
      * @return 
      */
     public static ExpressionB create(String op, Expression e1, Expression e2) {
+        en = new EvalNum(); //TODO le passer en injection (c' est en fait une tratégie d'évaluation
         if (op.equals("+")) {
             return Add.create(e1, e2);
         } else if (op.equals("-")) {
              return Sous.create(e1, e2);
         }
-        //TODO : ajouter toutes les autres oérations pérmises
+        //TODO : ajouter toutes les autres opérations permises
         return null;
     }
 

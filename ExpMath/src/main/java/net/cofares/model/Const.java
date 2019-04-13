@@ -7,7 +7,7 @@ package net.cofares.model;
  * //TODO redefinir aussi hashcode()
  * @author Pascal Fares (c) Cnam Liban
  */
-public class Const implements Expression {
+public class Const extends Expression {
 
     public static Const create(Integer i) {
         return new Const(i);
@@ -30,7 +30,7 @@ public class Const implements Expression {
 
     @Override
     public Integer evalNum() {
-        return getI();
+        return en.evalNum(this);
     }
 
     public static void main(String args[]) {

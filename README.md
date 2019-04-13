@@ -74,10 +74,10 @@ class ExpressionB {
 4. qui crée l'expression suivante `(((3 -5) + 6) +8)` puis lui appliquer les 3 méthodes eval(), evalnum() et show()
 5. Excrire les 2 classes qui manques Mult et Div
 
-## La version v0.2 : pattern visiteur pour evalNum seule
+## La version v0.2 : pattern visiteur pour evalNum seul
 
-## La version v0.3 : patterb visiteur + streatégie par injection de l'évaluateur
- 
+## La version v0.3 : pattern visiteur + stratégie par injection de l'évaluateur
+
 ===
 //TODO la prochaine fois 
 1. Appliquer le  pattern visiteurs pour simplifier les différente évaluation

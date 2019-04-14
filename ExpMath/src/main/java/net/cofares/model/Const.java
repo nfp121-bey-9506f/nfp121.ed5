@@ -20,17 +20,17 @@ public class Const extends Expression {
 
     @Override
     public Expression eval() {
-        return this; 
+        return e.eval(this); 
     }
 
     @Override
     public String show() {
-        return "Const:"+getI();
+        return es.eval(this);
     }
 
     @Override
     public Integer evalNum() {
-        return en.evalNum(this);
+        return en.eval(this);
     }
 
     public static void main(String args[]) {

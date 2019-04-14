@@ -25,17 +25,17 @@ public class Add extends ExpressionB {
     }
     @Override
     public Integer evalNum() {
-        return en.evalNum(this);
+        return en.eval(this);
     }
 
     @Override
     public Expression eval() {
-      return Const.create(e1.evalNum()+e2.evalNum());
+        return e.eval(this); 
     }
 
     @Override
     public String show() {
-        return "(" + e1.show() + "+" + e2.show() + ")" ;
+        return es.eval(this);
     }
     
 }

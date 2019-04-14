@@ -1,5 +1,9 @@
 package net.cofares.model;
 
+import net.cofares.visiteur.eval.EvalNum;
+import net.cofares.visiteur.eval.EvalShow;
+import net.cofares.visiteur.eval.EvalToExp;
+
 /**
  * La grammaire
  * 
@@ -27,7 +31,9 @@ package net.cofares.model;
  * @author Pascal Fares
  */
 public abstract class Expression {
-    static EvalNum en = new EvalNum(); //Le visiteur Eval NUM TODO: faire que tous les visiteur evaluateur soit une startegie
+    static EvalNum en = new EvalNum(); //Les visiteur 
+    static EvalToExp e = new EvalToExp();
+    static EvalShow es = new EvalShow();
     // à injecter apr un setter, à la création une evaluateur par defaut.
 
     //Factory Expression create : style visiteur

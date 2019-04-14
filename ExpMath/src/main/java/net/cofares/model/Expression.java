@@ -1,5 +1,6 @@
 package net.cofares.model;
 
+import net.cofares.visiteur.eval.Eval;
 import net.cofares.visiteur.eval.EvalNum;
 import net.cofares.visiteur.eval.EvalShow;
 import net.cofares.visiteur.eval.EvalToExp;
@@ -58,4 +59,6 @@ public abstract class Expression {
      * @return 
      */
     abstract public String show();
+    
+    abstract public <T> T evalAccept(Eval<T> e); 
 }

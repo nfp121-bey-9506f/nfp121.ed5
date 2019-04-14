@@ -1,5 +1,7 @@
 package net.cofares.model;
 
+import net.cofares.visiteur.eval.Eval;
+
 
 /**
  * Const ::= entier de java 
@@ -64,6 +66,12 @@ public class Const extends Expression {
      */
     public Integer getI() {
         return i;
+    }
+
+    //Le plus général
+    @Override
+    public <T> T evalAccept(Eval<T> e) {
+       return e.eval(this);
     }
 
 }

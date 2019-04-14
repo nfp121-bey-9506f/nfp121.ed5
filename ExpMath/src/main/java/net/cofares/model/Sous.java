@@ -1,5 +1,7 @@
 package net.cofares.model;
 
+import net.cofares.visiteur.eval.Eval;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -37,6 +39,12 @@ public class Sous extends ExpressionB {
     @Override
     public String show() {
         return es.eval(this);
+    }
+    
+    //Le plus général
+    @Override
+    public <T> T evalAccept(Eval<T> e) {
+       return e.eval(this);
     }
     
 }

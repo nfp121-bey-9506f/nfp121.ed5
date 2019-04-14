@@ -11,6 +11,7 @@ import net.cofares.model.Sous;
 
 /**
  * Le visiteur EvalNum
+ * les methde eval sont la méthode visit du pattern visiteur
  * @author Pascal Fares
  */
 public class EvalNum implements Eval<Integer> {

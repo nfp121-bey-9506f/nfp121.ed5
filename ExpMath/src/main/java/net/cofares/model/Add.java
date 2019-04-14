@@ -1,5 +1,7 @@
 package net.cofares.model;
 
+import net.cofares.visiteur.eval.Eval;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -23,6 +25,9 @@ public class Add extends ExpressionB {
         this.e1=e1;
         this.e2=e2;
     }
+    
+    //Utilisation du pattern visiteur pour evalNum, eval et show 
+    //les 3 methodes sont la methiode accept, et en,e,es.eval(this) sont le visit 
     @Override
     public Integer evalNum() {
         return en.eval(this);
@@ -36,6 +41,12 @@ public class Add extends ExpressionB {
     @Override
     public String show() {
         return es.eval(this);
+    }
+    
+    //Le plus général
+    @Override
+    public <T> T evalAccept(Eval<T> e) {
+       return e.eval(this);
     }
     
 }

@@ -1,5 +1,7 @@
 package net.cofares.model;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import net.cofares.visiteur.eval.Eval;
 
 /*
@@ -26,22 +28,6 @@ public class Add extends ExpressionB {
         this.e2=e2;
     }
     
-    //Utilisation du pattern visiteur pour evalNum, eval et show 
-    //les 3 methodes sont la methiode accept, et en,e,es.eval(this) sont le visit 
-    @Override
-    public Integer evalNum() {
-        return en.eval(this);
-    }
-
-    @Override
-    public Expression eval() {
-        return e.eval(this); 
-    }
-
-    @Override
-    public String show() {
-        return es.eval(this);
-    }
     
     //Le plus général
     @Override
@@ -49,4 +35,18 @@ public class Add extends ExpressionB {
        return e.eval(this);
     }
     
+    @Override
+    public String toString() {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+	return gson.toJson(this);
+    }
+    
+    public static void main(String args[]) {
+
+        Const instance = Const.create(10);
+        System.out.println("show = " + instance.eval());
+        System.out.println("show = " + instance.show());
+        System.out.println("EvalNum = " + instance.evalNum());
+        System.out.println("instance = " + instance);
+    }
 }

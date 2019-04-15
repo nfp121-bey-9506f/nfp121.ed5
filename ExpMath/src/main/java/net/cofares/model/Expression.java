@@ -32,33 +32,74 @@ import net.cofares.visiteur.eval.EvalToExp;
  * @author Pascal Fares
  */
 public abstract class Expression {
+    //Les visiteurs prévus
+    /**
+     * Visiteur d'évaluation en Integer Expression &rarr; Integer
+     */
     static EvalNum en = new EvalNum(); //Les visiteur 
+    /**
+     * Visiteur d'évaluation simplification Expression &rarr; Expression
+     */
     static EvalToExp e = new EvalToExp();
+    /**
+     * Visiteur d'évaluation affichage normal exemple
+     * (e1 op e2)
+     */
     static EvalShow es = new EvalShow();
     // à injecter apr un setter, à la création une evaluateur par defaut.
 
     //Factory Expression create : style visiteur
+    /**
+     * Factory de crátion d'une expression constante
+     * @param i l'entier
+     * @return une expression instance de Const
+     */
     public static Expression create(Integer i) {
         return Const.create(i);
     }
+    /**
+     * Factory de crátion d'une expression "binaire"
+     * @param op l'opération
+     * @param e1 l'expression gauche
+     * @param e2 l expression droite
+     * @return Une expression instance de ExpressionB
+     */
     public static Expression create(String op, Expression e1, Expression e2) {
         return ExpressionB.create(op, e1, e2);
     }
     /**
-     * Avaluation numérique
+     * Evaluation numérique
+     * Utilisation du pattern visiteur + template method
+     * Visisteur = EvalNum , accept = evalAccept
      * @return 
      */
-    abstract public Integer evalNum();
+    public Integer evalNum() {
+        return evalAccept(en);
+    }
     /**
      * Avaluation de symplification Expression donne Une autre expression
+     * Utilisation du pattern visiteur + template method
+     * Visisteur = EvalToExp , accept = evalAccept
      * @return 
      */
-    abstract public Expression eval();
+    public Expression eval() {
+        return evalAccept(e);
+    }
     /**
      * Evaluation affichage de l'arbre sémantique (ou traduction)
+     * Utilisation du pattern visiteur + template method
+     * Visisteur = EvalShow , accept = evalAccept
      * @return 
      */
-    abstract public String show();
+    public String show(){
+        return evalAccept(es);
+    }
     
+    /**
+     * la method evalAccept inmplementée par les sous class
+     * @param <T>
+     * @param e
+     * @return 
+     */
     abstract public <T> T evalAccept(Eval<T> e); 
 }

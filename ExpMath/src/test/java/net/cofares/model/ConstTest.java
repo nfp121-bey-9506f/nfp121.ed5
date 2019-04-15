@@ -30,13 +30,13 @@ import static org.junit.Assert.*;
  * @author pfares
  */
 public class ConstTest {
-    
+    Const instance;
     public ConstTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
-        System.out.println("Before class");
+        //System.out.println("Before class");
     }
     
     @AfterClass
@@ -46,6 +46,7 @@ public class ConstTest {
     @Before
     public void setUp() {
           System.out.println("Before Each");
+          instance = Const.create(10);
     }
     
     @After
@@ -70,7 +71,7 @@ public class ConstTest {
     @Test
     public void testEval() {
         System.out.println("eval");
-        Const instance = Const.create(10);
+ 
         Expression expResult = instance;
         Expression result = instance.eval();
         assertEquals(expResult, result);
@@ -83,7 +84,7 @@ public class ConstTest {
     @Test
     public void testShow() {
         System.out.println("show");
-        Const instance = Const.create(10);
+
         String expResult = "Const:10";
         String result = instance.show();
         assertEquals(expResult, result);
@@ -95,23 +96,23 @@ public class ConstTest {
     @Test
     public void testEvalNum() {
         System.out.println("evalNum");
-        Const instance = Const.create(10);
+
         Integer expResult = 10;
         Integer result = instance.evalNum();
         assertEquals(expResult, result);
         
     }
 
-   
-   
+  
 
     /**
      * Test of evalAccept method, of class Const.
+     * 
      */
     @Test
     public void testEvalAccept() {
         System.out.println("evalAccept");
-        Const instance = Const.create(10);
+
         Integer expResult = 10;
         Integer result = instance.evalAccept(new EvalNum());
         assertEquals(expResult, result);

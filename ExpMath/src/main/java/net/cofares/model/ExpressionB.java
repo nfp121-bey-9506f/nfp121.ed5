@@ -5,15 +5,17 @@
  */
 package net.cofares.model;
 
+import java.util.Objects;
 import net.cofares.visiteur.eval.EvalNum;
 import net.cofares.visiteur.eval.EvalShow;
 import net.cofares.visiteur.eval.EvalToExp;
 
 /**
  * omolememte composition, Abstract Factory + template
+ *
  * @author Acer
  */
-public abstract class ExpressionB extends Expression{
+public abstract class ExpressionB extends Expression {
 
     /**
      * @return the e1
@@ -46,28 +48,50 @@ public abstract class ExpressionB extends Expression{
     protected Expression e1;
     protected Expression e2;
 
-
     /**
-     * C'est une abstract facroty en focntion de op ::== choix de 
-     * la Fabrique concrète
+     * C'est une abstract facroty en focntion de op ::== choix de la Fabrique
+     * concrète
+     *
      * @param op
      * @param e1
      * @param e2
-     * @return 
+     * @return
      */
     public static ExpressionB create(String op, Expression e1, Expression e2) {
         en = new EvalNum(); //TODO le passer en injection (c' est en fait une tratégie d'évaluation
-        e=new EvalToExp();
-        es=new EvalShow();
-        
+        e = new EvalToExp();
+        es = new EvalShow();
+
         if (op.equals("+")) {
             return Add.create(e1, e2);
         } else if (op.equals("-")) {
-             return Sous.create(e1, e2);
+            return Sous.create(e1, e2);
         }
         //TODO : ajouter toutes les autres opérations permises
         return null;
     }
 
-    
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        if (!(o instanceof ExpressionB)) {
+            return false;
+        }
+        ExpressionB a = (ExpressionB) o;
+        //Egalité de 2 expression binare (a+b) == (a+b) mais aussi par 
+        //simétrie (a+b) = (b+a)
+        return ((this.e1.equals(a.e1) && this.e2.equals(a.e2))
+                || (this.e1.equals(a.e2) && this.e2.equals(a.e1)));
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.e1);
+        hash = 97 * hash + Objects.hashCode(this.e2);
+        return hash;
+    }
+
 }

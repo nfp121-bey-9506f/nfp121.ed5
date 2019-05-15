@@ -27,10 +27,8 @@ public abstract class ExpressionB implements Expression{
             return Add.create(e1, e2);
         } else if (op.equals("-")) {
              return Sous.create(e1, e2);
-        }
-        //TODO : ajouter toutes les autres oérations pérmises
-        return null;
+        }else if (op.equals("*")) 
+             return Mult.create(e1, e2);
+        else return Div.create(e1,e2);
     }
-
-    
 }

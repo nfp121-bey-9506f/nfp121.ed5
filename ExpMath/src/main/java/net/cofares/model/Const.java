@@ -40,9 +40,9 @@ public class Const implements Expression {
         System.out.println("show = "+instance.show());
         System.out.println("EvalNum = "+instance.evalNum());
     }
-    @Override
-    public int hashCode(){
-        return i.hashCode();
+    
+    public Integer hashcode(){
+        return i;
     }
     public boolean equals(Object o) {  
         if (o == this) { 

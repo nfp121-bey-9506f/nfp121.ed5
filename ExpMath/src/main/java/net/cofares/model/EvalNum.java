@@ -21,4 +21,12 @@ public class EvalNum {
     Integer evalNum(Sous a){
         return a.e1.evalNum()-a.e2.evalNum();
     }
+    
+    Integer evalNum(Mult m){
+        return a.e1.evalNum()*a.e2.evalNum();
+    }
+    
+    Integer evalNum(Div a){
+        return a.e1.evalNum()/a.e2.evalNum();
+    }
 }

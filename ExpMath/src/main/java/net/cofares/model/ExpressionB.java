@@ -30,7 +30,11 @@ public abstract class ExpressionB extends Expression{
         } else if (op.equals("-")) {
              return Sous.create(e1, e2);
         }
-        //TODO : ajouter toutes les autres opérations permises
+        else if (op.equals("/")) {
+             return Div.create(e1, e2);
+        }else if (op.equals("*")) {
+             return Mult.create(e1, e2);
+        }
         return null;
     }
 

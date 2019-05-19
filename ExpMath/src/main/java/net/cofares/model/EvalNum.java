@@ -23,10 +23,10 @@ public class EvalNum {
     }
     
     Integer evalNum(Mult m){
-        return a.e1.evalNum()*a.e2.evalNum();
+        return m.e1.evalNum()*m.e2.evalNum();
     }
     
-    Integer evalNum(Div a){
-        return a.e1.evalNum()/a.e2.evalNum();
+    Integer evalNum(Div d){
+        return d.e1.evalNum()/d.e2.evalNum();
     }
 }

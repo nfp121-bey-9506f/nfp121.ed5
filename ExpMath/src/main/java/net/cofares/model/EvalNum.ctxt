@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=EvalNum
+comment0.text=\r\n\ Le\ visiteur\ EvalNum\r\n\ @author\ Acer\r\n
+comment1.params=c
+comment1.target=java.lang.Integer\ evalNum(Const)
+comment2.params=a
+comment2.target=java.lang.Integer\ evalNum(Add)
+comment3.params=a
+comment3.target=java.lang.Integer\ evalNum(Sous)
+comment4.params=m
+comment4.target=java.lang.Integer\ evalNum(Mult)
+comment5.params=d
+comment5.target=java.lang.Integer\ evalNum(Div)
+numComments=6
